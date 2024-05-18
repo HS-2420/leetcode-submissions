@@ -4,23 +4,21 @@ public:
         int left = 0, right = nums.size() - 1;
         
         while (left <= right) {
-            int mid = left + (right - left) / 2;
-            
-            if (nums[mid] == target) {
-                return true;
-            }
-            
-            // When we have duplicates, just move the left pointer up to skip the duplicate
-            if (nums[left] == nums[mid] && nums[mid] == nums[right]) {
+            int mid = left + (right - left) / 2;       
+            if (nums[mid] == target) 
+            {  return true; }
+            if (nums[left] == nums[mid] && nums[mid] == nums[right]) 
+            {
                 ++left;
                 --right;
-            } else if (nums[left] <= nums[mid]) { // Left half is sorted
-                if (nums[left] <= target && target < nums[mid]) {
-                    right = mid - 1;
-                } else {
-                    left = mid + 1;
-                }
-            } else { // Right half is sorted
+            }
+             else if (nums[left] <= nums[mid]) 
+             {  if (nums[left] <= target && target < nums[mid])
+              {  right = mid - 1; }
+              else 
+              {  left = mid + 1; }
+            } 
+            else { 
                 if (nums[mid] < target && target <= nums[right]) {
                     left = mid + 1;
                 } else {
@@ -28,7 +26,6 @@ public:
                 }
             }
         }
-        
         return false;
     }
 };
