@@ -7,13 +7,13 @@ public:
             if (flowerbed[i] == 0) {
                 bool emptyLeft = (i == 0) || (flowerbed[i - 1] == 0);
                 bool emptyRight = (i == size - 1) || (flowerbed[i + 1] == 0);
-
-                if (emptyLeft && emptyRight) {
-                    flowerbed[i] = 1; // Plant a flower here
+                if (emptyLeft && emptyRight) 
+                {
+                    flowerbed[i] = 1; 
                     count++;
-                    if (count >= n) {
-                        return true; // Early exit if we've planted enough
-                                     // flowers
+                    if (count >= n) 
+                    {
+                        return true; 
                     }
                 }
             }
