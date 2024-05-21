@@ -10,18 +10,17 @@
 class Solution {
 public:
     int guessNumber(int n) {
-        int s=1;
-        int e=n;
-        while(s<=e)
+        int left=0;int right=n;
+        while(left<=right)
         {
-            int m=s+((e-s)/2);
-            int val=guess(m);
-            if(val==0)
+            int m=left+((right-left)/2);
+            int ans=guess(m);
+            if(ans==0)
             {return m;}
-            else if(val ==-1)
-            {e=m-1;}
+            else if(ans == -1)
+            {right=m-1;}
             else
-            {s=m+1;}
+            {left=m+1;}
         }
         return -1;
     }
