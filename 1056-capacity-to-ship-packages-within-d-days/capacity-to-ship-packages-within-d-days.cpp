@@ -1,18 +1,18 @@
-    bool check(vector<int> &wts,int w,int days)
+    bool check(vector<int> &v,int m,int days)
     {
         int day=1;
-        int wt=0;
-        for(int i=0;i<wts.size();i++)
+        int w=0;
+        for(int i=0;i<v.size();i++)
         {
-            if(wt+wts[i]>w)
+            if(w+v[i]>m)
             {
-                wt=wts[i];
-                if(wt>w)
+                w=v[i];
+                if(w>m)
                 { return 0; }
                 day++;
             }
             else
-            { wt+=wts[i]; }
+            { w=w+v[i]; }
         }
         return day<=days;
     }
