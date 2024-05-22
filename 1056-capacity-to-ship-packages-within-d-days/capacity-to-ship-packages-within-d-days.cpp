@@ -1,5 +1,3 @@
-class Solution {
-public:
     bool check(vector<int> &wts,int w,int days)
     {
         int day=1;
@@ -18,6 +16,8 @@ public:
         }
         return day<=days;
     }
+class Solution {
+public:
     int shipWithinDays(vector<int>& weights, int days) {  
         int s=1;
         int e=accumulate(weights.begin(),weights.end(),0);
